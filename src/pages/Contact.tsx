@@ -26,18 +26,10 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <section className="section-padding relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-            alt=""
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/80 to-slate-900/55" />
-        </div>
-        <div className="container-tight relative z-10">
+      <section className="bg-slate-900 py-24 md:py-32">
+        <div className="container-tight">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-            <span className="text-white/70 text-sm font-medium tracking-wide uppercase mb-3 block">Contact</span>
+            <span className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-4 block">Contact</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               Let's talk about your <span className="gradient-text">growth</span>
             </h1>

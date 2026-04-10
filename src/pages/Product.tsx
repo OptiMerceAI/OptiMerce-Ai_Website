@@ -8,22 +8,14 @@ import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 const ProductPage = () => (
   <Layout>
     {/* Hero */}
-    <section className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/60" />
-      </div>
-      <div className="container-tight relative z-10">
+    <section className="bg-white py-24 md:py-32 border-b border-slate-100">
+      <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-white text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Product</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+          <span className="text-slate-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Product</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
             The AI Decision Engine for <span className="gradient-text">E-commerce</span>
           </h1>
-          <p className="text-lg text-slate-200 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
             OptiMerce AI is a unified platform that transforms fragmented e-commerce data into intelligent, profit-maximising decisions—automatically.
           </p>
         </motion.div>
