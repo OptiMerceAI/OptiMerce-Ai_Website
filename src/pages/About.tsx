@@ -7,17 +7,14 @@ import aboutHero from "@/assets/about-hero.jpg";
 
 const AboutPage = () => (
   <Layout>
-    <section className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={aboutHero} alt="" className="w-full h-full object-cover opacity-100" />
-      </div>
-      <div className="container-tight relative z-10">
+    <section className="bg-slate-900 section-padding">
+      <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">About</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">About</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Empowering SMEs with <span className="gradient-text">intelligent AI</span>
           </h1>
-          <p className="text-lg text-surface-dark-foreground leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             OptiMerce AI was founded with a clear mission: make enterprise-grade AI accessible to every e-commerce business.
           </p>
         </motion.div>
