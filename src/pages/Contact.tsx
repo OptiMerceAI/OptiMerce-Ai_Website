@@ -26,17 +26,14 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <section className="section-dark section-padding relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={contactHero} alt="" className="w-full h-full object-cover opacity-100" />
-        </div>
-        <div className="container-tight relative z-10">
+      <section className="bg-slate-900 section-padding">
+        <div className="container-tight">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-            <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Contact</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+            <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Contact</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               Let's talk about your <span className="gradient-text">growth</span>
             </h1>
-            <p className="text-lg text-surface-dark-foreground leading-relaxed">
+            <p className="text-lg text-slate-300 leading-relaxed">
               Request early access, book a demo, or discuss how OptiMerce AI can transform your e-commerce operations.
             </p>
           </motion.div>
