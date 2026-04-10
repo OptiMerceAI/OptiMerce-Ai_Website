@@ -2,26 +2,16 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Section, SectionHeading, FeatureCard } from "@/components/SectionComponents";
-import {
-  TrendingUp,
-  DollarSign,
-  Package,
-  BarChart3,
-  ArrowRight,
-  Zap,
-  Target,
-  LineChart,
-  Quote,
-} from "lucide-react";
+import { TrendingUp, DollarSign, Package, ChartBar as BarChart3, ArrowRight, Zap, Target, ChartLine as LineChart, Quote } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 import howItWorksImg from "@/assets/how-it-works.jpg";
 
 const Hero = () => (
   <section className="section-dark relative overflow-hidden">
-    {/* Background image */}
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover opacity-100" />
+      <img src={heroBg} alt="" className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
     </div>
     <div className="container-tight px-4 py-24 md:py-36 relative z-10">
       <motion.div
@@ -30,14 +20,14 @@ const Hero = () => (
         transition={{ duration: 0.7 }}
         className="max-w-3xl"
       >
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 mb-6">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 text-white border border-white/25 mb-6 backdrop-blur-sm drop-shadow-md">
           <Zap size={12} /> Pilot Program Now Open
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-hero-foreground leading-[1.1] mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-md">
           AI-Powered Optimisation for{" "}
           <span className="gradient-text">E-commerce Growth</span>
         </h1>
-        <p className="text-lg md:text-xl text-surface-dark-foreground leading-relaxed mb-8 max-w-2xl">
+        <p className="text-lg md:text-xl text-slate-200 leading-relaxed mb-8 max-w-2xl drop-shadow-md">
           Unify demand forecasting, pricing optimisation, inventory intelligence, and ad spend management with a single AI-driven decision engine.
         </p>
         <div className="flex flex-wrap gap-4">
@@ -49,7 +39,7 @@ const Hero = () => (
           </Link>
           <Link
             to="/product"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border/20 text-hero-foreground font-medium hover:bg-surface-dark-elevated transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition-colors backdrop-blur-sm"
           >
             Explore Platform
           </Link>
