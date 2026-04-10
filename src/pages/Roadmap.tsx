@@ -40,19 +40,15 @@ const phases = [
 
 const RoadmapPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-24 md:py-32 bg-white">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full opacity-[0.5]" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(219,234,254,0.6) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-[0.4]" style={{ background: "radial-gradient(ellipse at bottom right, rgba(186,230,253,0.5) 0%, transparent 70%)" }} />
-        <div className="absolute top-1/3 left-0 w-[300px] h-[300px] opacity-[0.3]" style={{ background: "radial-gradient(circle, rgba(224,242,254,0.8) 0%, transparent 70%)" }} />
-      </div>
+    <section className="relative overflow-hidden py-24 md:py-32 bg-slate-900">
+      <div className="absolute inset-0 pointer-events-none" />
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
           <span className="text-blue-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Roadmap</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Building the future of <span className="gradient-text">e-commerce intelligence</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-white leading-relaxed">
             A clear, phased approach from MVP to global scale—designed for sustainable growth and technical excellence.
           </p>
         </motion.div>
