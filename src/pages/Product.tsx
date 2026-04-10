@@ -15,11 +15,11 @@ const ProductPage = () => (
       </div>
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Product</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+          <span className="text-white text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Product</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
             The AI Decision Engine for <span className="gradient-text">E-commerce</span>
           </h1>
-          <p className="text-lg text-surface-dark-foreground leading-relaxed max-w-2xl">
+          <p className="text-lg text-slate-200 font-medium leading-relaxed max-w-2xl drop-shadow-md">
             OptiMerce AI is a unified platform that transforms fragmented e-commerce data into intelligent, profit-maximising decisions—automatically.
           </p>
         </motion.div>
