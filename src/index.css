@@ -45,6 +45,15 @@
     --surface-dark-elevated: 222 40% 12%;
     --surface-dark-foreground: 210 30% 85%;
     --glow: 217 91% 60%;
+
+    /* SaaS Landing Colors */
+    --bg-deep: #060d1f;
+    --glow-blue: #2563eb;
+    --accent-blue: #3b82f6;
+    --text-primary: #f0f4ff;
+    --text-muted: #7b92b8;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
   }
 
   .dark {
@@ -127,5 +136,28 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  .hero-glow {
+    background: linear-gradient(135deg,
+      rgba(30, 80, 200, 0.08) 0%,
+      rgba(50, 120, 255, 0.14) 35%,
+      rgba(80, 150, 255, 0.22) 70%,
+      transparent 100%);
   }
 }

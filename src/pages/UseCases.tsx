@@ -1,169 +1,387 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import { Section, SectionHeading } from "@/components/SectionComponents";
-import { ShoppingCart, Globe, Warehouse, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const useCaseCategories = [
+  "Marketing",
+  "Engineering",
+  "Sales",
+  "Design",
+  "Support",
+];
 
 const useCases = [
   {
-    icon: <ShoppingCart size={24} />,
-    title: "E-commerce Sellers (Shopify / Amazon)",
-    problem: "Individual sellers struggle with manual pricing adjustments, reactive inventory management, and inefficient ad spend across platforms.",
-    solution: "OptiMerce connects directly to Shopify and Amazon, providing automated pricing recommendations, demand forecasts, and ad budget optimisation across all listings.",
-    outcomes: ["20-30% reduction in stockouts", "15% margin improvement through dynamic pricing", "3x faster decision-making on inventory replenishment"],
+    icon: "🎯",
+    title: "Campaign Management",
+    description:
+      "Streamline multi-channel campaigns with unified analytics and real-time performance tracking.",
+    category: "Marketing",
   },
   {
-    icon: <Globe size={24} />,
-    title: "Multi-channel Brands",
-    problem: "Brands selling across multiple channels face conflicting pricing strategies, fragmented demand signals, and duplicated inventory costs.",
-    solution: "A unified view of demand and inventory across all channels, with optimisation that accounts for channel-specific dynamics and cannibalisation effects.",
-    outcomes: ["Unified demand view across 5+ channels", "Consistent pricing strategy reducing channel conflict", "25% reduction in excess inventory"],
+    icon: "⚙️",
+    title: "Infrastructure Monitoring",
+    description:
+      "Monitor system health across all environments with intelligent alerting and predictive diagnostics.",
+    category: "Engineering",
   },
   {
-    icon: <Warehouse size={24} />,
-    title: "Inventory-heavy Businesses",
-    problem: "Businesses with large product catalogues and significant working capital tied up in inventory face constant trade-offs between service levels and carrying costs.",
-    solution: "Advanced safety stock calculations, optimal reorder point modelling, and predictive allocation that minimise carrying costs while maintaining target service levels.",
-    outcomes: ["30% reduction in carrying costs", "98%+ service level achievement", "Automated reorder triggers saving 10+ hours/week"],
+    icon: "💼",
+    title: "Pipeline Visualization",
+    description:
+      "Get a complete view of your sales pipeline with AI-powered forecasting and deal insights.",
+    category: "Sales",
+  },
+  {
+    icon: "🎨",
+    title: "Design Collaboration",
+    description:
+      "Collaborate seamlessly with version control, asset management, and real-time commenting.",
+    category: "Design",
+  },
+  {
+    icon: "🎧",
+    title: "Support Hub",
+    description:
+      "Consolidate customer tickets across channels with AI-powered triage and knowledge base.",
+    category: "Support",
+  },
+  {
+    icon: "📊",
+    title: "Analytics & Reports",
+    description:
+      "Generate custom reports with predictive insights and automated recommendations.",
+    category: "Marketing",
   },
 ];
 
-const UseCasesPage = () => (
-  <Layout>
-    <section
-      className="relative overflow-hidden flex flex-col justify-center"
-      style={{
-        minHeight: "520px",
-        background: "#060d1f",
-      }}
-    >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: [
-            "radial-gradient(ellipse 65% 55% at 50% 0%, rgba(26,107,255,0.18) 0%, transparent 100%)",
-            "radial-gradient(circle at 1.5px 1.5px, rgba(255,255,255,0.07) 1.5px, transparent 0)",
-          ].join(", "),
-          backgroundSize: "100% 100%, 28px 28px",
-        }}
-      />
+const UseCasesPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-      <div className="container-tight relative z-10 py-28 md:py-36">
-        <motion.span
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="block mb-5 text-xs font-semibold uppercase"
-          style={{ color: "#a0b4d6", letterSpacing: "0.18em" }}
-        >
-          Use Cases
-        </motion.span>
+  const filteredCases = selectedCategory
+    ? useCases.filter((uc) => uc.category === selectedCategory)
+    : useCases;
 
-        <motion.h1
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.08 }}
-          className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 max-w-3xl"
-          style={{ textShadow: "0 2px 24px rgba(30,100,255,0.25)" }}
-        >
-          Built for e-commerce businesses that want to{" "}
-          <span className="gradient-text">grow smarter</span>
-        </motion.h1>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.16 }}
-          className="text-lg leading-relaxed max-w-2xl mb-14"
-          style={{ color: "#c8d8f0" }}
-        >
-          See how OptiMerce AI addresses the unique challenges of different e-commerce segments.
-        </motion.p>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
-        <div className="grid md:grid-cols-3 gap-5">
-          {useCases.map((uc, i) => (
+  return (
+    <Layout>
+      <section
+        className="relative w-full min-h-screen overflow-hidden flex flex-col justify-center"
+        style={{ backgroundColor: "var(--bg-deep)" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none glow-pulse"
+          style={{
+            background: `
+              radial-gradient(ellipse 140% 130% at 50% 0%, rgba(30, 80, 200, 0.08) 0%, transparent 40%),
+              radial-gradient(ellipse 100% 90% at 50% 0%, rgba(50, 120, 255, 0.14) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 50% at 50% 0%, rgba(80, 150, 255, 0.22) 0%, transparent 60%)
+            `,
+          }}
+        />
+
+        <div className="absolute inset-0 pointer-events-none opacity-40">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)
+              `,
+              backgroundSize: "50px 50px",
+              backgroundPosition: "0 0",
+            }}
+          />
+        </div>
+
+        <div className="container-tight relative z-10 px-4 py-28 md:py-32 lg:py-40">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.22 + i * 0.1 }}
-              className="group rounded-xl p-6 cursor-default transition-all duration-300"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(30,120,255,0.4)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 22px rgba(30,120,255,0.15)";
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-3px)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             >
               <div
-                className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
-                style={{ background: "rgba(30,107,255,0.15)", color: "#60a5fa" }}
+                className="inline-block mb-6 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  color: "var(--accent-blue)",
+                }}
               >
-                {uc.icon}
+                Use Cases
               </div>
-              <h3
-                className="font-bold text-white mb-2 text-base leading-snug"
-                style={{ textShadow: "0 1px 12px rgba(30,100,255,0.2)" }}
-              >
-                {uc.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#94afd4" }}>
-                {uc.problem}
-              </p>
             </motion.div>
-          ))}
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-balance"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Built for every team, every workflow
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl text-balance"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Discover how teams across the globe use our platform to streamline
+              workflows, accelerate collaboration, and drive measurable results.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 mb-12"
+            >
+              <button
+                className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group"
+                style={{
+                  background: "var(--accent-blue)",
+                  color: "white",
+                }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLButtonElement).style.transform =
+                    "translateY(-2px)";
+                  (e.target as HTMLButtonElement).style.boxShadow =
+                    "0 8px 24px rgba(59, 130, 246, 0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLButtonElement).style.transform =
+                    "translateY(0)";
+                  (e.target as HTMLButtonElement).style.boxShadow = "none";
+                }}
+              >
+                Get Started
+                <ArrowRight size={18} />
+              </button>
+              <button
+                className="px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "var(--text-primary)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLButtonElement).style.borderColor =
+                    "var(--accent-blue)";
+                  (e.target as HTMLButtonElement).style.background =
+                    "rgba(59, 130, 246, 0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.target as HTMLButtonElement).style.borderColor =
+                    "rgba(255,255,255,0.2)";
+                  (e.target as HTMLButtonElement).style.background =
+                    "transparent";
+                }}
+              >
+                Watch Demo
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-3"
+            >
+              {useCaseCategories.map((category, index) => (
+                <button
+                  key={category}
+                  onClick={() =>
+                    setSelectedCategory(
+                      selectedCategory === category ? null : category
+                    )
+                  }
+                  style={{
+                    background:
+                      selectedCategory === category
+                        ? "var(--accent-blue)"
+                        : "rgba(255,255,255,0.05)",
+                    border:
+                      selectedCategory === category
+                        ? `1px solid var(--accent-blue)`
+                        : "1px solid rgba(255,255,255,0.1)",
+                    color:
+                      selectedCategory === category
+                        ? "white"
+                        : "var(--text-muted)",
+                  }}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300"
+                  onMouseEnter={(e) => {
+                    if (selectedCategory !== category) {
+                      (e.target as HTMLButtonElement).style.borderColor =
+                        "rgba(255,255,255,0.3)";
+                      (e.target as HTMLButtonElement).style.background =
+                        "rgba(255,255,255,0.08)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (selectedCategory !== category) {
+                      (e.target as HTMLButtonElement).style.borderColor =
+                        "rgba(255,255,255,0.1)";
+                      (e.target as HTMLButtonElement).style.background =
+                        "rgba(255,255,255,0.05)";
+                    }
+                  }}
+                >
+                  {category}
+                </button>
+              ))}
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {useCases.map((uc, i) => (
-      <Section key={i} className={i % 2 === 0 ? "" : "section-dark"}>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">{uc.icon}</div>
-            <h2 className={`text-2xl md:text-3xl font-bold ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>{uc.title}</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wide text-destructive mb-3">Problem</h3>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{uc.problem}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wide text-primary mb-3">Solution</h3>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{uc.solution}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium uppercase tracking-wide text-accent mb-3">Expected Outcomes</h3>
-              <ul className="space-y-2">
-                {uc.outcomes.map((o, j) => (
-                  <li key={j} className={`flex items-start gap-2 text-sm ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />{o}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-      </Section>
-    ))}
+      <section className="relative w-full overflow-hidden py-20 md:py-32 px-4">
+        <div className="container-tight">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {filteredCases.map((useCase, index) => (
+              <motion.div
+                key={`${useCase.title}-${index}`}
+                variants={itemVariants}
+                className="group rounded-2xl border p-8 transition-all duration-300 cursor-pointer backdrop-blur-sm"
+                style={{
+                  background: "var(--card-bg)",
+                  borderColor: "var(--card-border)",
+                }}
+                onMouseEnter={(e) => {
+                  const element = e.currentTarget as HTMLDivElement;
+                  element.style.borderColor = "rgba(59, 130, 246, 0.5)";
+                  element.style.background =
+                    "rgba(59, 130, 246, 0.05)";
+                  element.style.boxShadow =
+                    "0 0 30px rgba(59, 130, 246, 0.2)";
+                  element.style.transform = "translateY(-4px)";
+                }}
+                onMouseLeave={(e) => {
+                  const element = e.currentTarget as HTMLDivElement;
+                  element.style.borderColor = "var(--card-border)";
+                  element.style.background = "var(--card-bg)";
+                  element.style.boxShadow = "none";
+                  element.style.transform = "translateY(0)";
+                }}
+              >
+                <div className="text-4xl mb-4">{useCase.icon}</div>
+                <h3
+                  className="text-xl font-bold mb-3"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {useCase.title}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed mb-6"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  {useCase.description}
+                </p>
+                <div
+                  className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  Learn more
+                  <ArrowRight size={16} />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
-    <Section className="section-dark">
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-hero-foreground mb-4">See your use case in action</h2>
-        <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
-          Request a Demo <ArrowRight size={18} />
-        </Link>
-      </div>
-    </Section>
-  </Layout>
-);
+      <section
+        className="relative w-full overflow-hidden py-20 md:py-32 px-4"
+        style={{ backgroundColor: "rgba(255,255,255,0.02)" }}
+      >
+        <div className="container-tight text-center max-w-2xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Ready to transform your workflow?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg mb-8"
+            style={{ color: "var(--text-muted)" }}
+          >
+            Join thousands of teams that are already seeing results. Start your
+            free trial today.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+              style={{
+                background: "var(--accent-blue)",
+                color: "white",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(-2px)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow =
+                  "0 8px 24px rgba(59, 130, 246, 0.4)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.transform =
+                  "translateY(0)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none";
+              }}
+            >
+              Get Started Now
+              <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
 
 export default UseCasesPage;
