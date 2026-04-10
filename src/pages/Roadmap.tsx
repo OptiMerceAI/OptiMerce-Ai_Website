@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Section, SectionHeading } from "@/components/SectionComponents";
-import { Rocket, Cpu, Globe, Expand, CheckCircle2 } from "lucide-react";
-import roadmapHero from "@/assets/roadmap-hero.jpg";
+import { Rocket, Cpu, Globe, Expand, CircleCheck as CheckCircle2 } from "lucide-react";
 
 const phases = [
   {
@@ -41,17 +40,14 @@ const phases = [
 
 const RoadmapPage = () => (
   <Layout>
-    <section className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={roadmapHero} alt="" className="w-full h-full object-cover opacity-100" />
-      </div>
-      <div className="container-tight relative z-10">
+    <section className="bg-slate-900 section-padding">
+      <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Roadmap</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Roadmap</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Building the future of <span className="gradient-text">e-commerce intelligence</span>
           </h1>
-          <p className="text-lg text-surface-dark-foreground leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             A clear, phased approach from MVP to global scale—designed for sustainable growth and technical excellence.
           </p>
         </motion.div>
