@@ -41,9 +41,8 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="mt-12 pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="mt-12 pt-8 border-t border-border/10">
         <p className="text-xs text-surface-dark-foreground">© 2026 OptiMerce AI. All rights reserved. A Jwalit Ltd company.</p>
-        <p className="text-xs text-surface-dark-foreground">Built with ❤️ in the United Kingdom</p>
       </div>
     </div>
   </footer>
