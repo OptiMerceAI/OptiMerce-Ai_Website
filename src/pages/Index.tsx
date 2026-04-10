@@ -3,15 +3,18 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Section, SectionHeading, FeatureCard } from "@/components/SectionComponents";
 import { TrendingUp, DollarSign, Package, ChartBar as BarChart3, ArrowRight, Zap, Target, ChartLine as LineChart, Quote } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 import howItWorksImg from "@/assets/how-it-works.jpg";
 
 const Hero = () => (
   <section className="section-dark relative overflow-hidden">
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40" />
+      <img
+        src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+        alt=""
+        className="w-full h-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/75 to-slate-900/55" />
     </div>
     <div className="container-tight px-4 py-24 md:py-36 relative z-10">
       <motion.div
