@@ -30,10 +30,15 @@ const useCases = [
 
 const UseCasesPage = () => (
   <Layout>
-    <section className="bg-slate-50 py-24 md:py-32 border-b border-slate-100">
-      <div className="container-tight">
+    <section className="relative overflow-hidden py-24 md:py-32 bg-white">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] rounded-full opacity-[0.07]" style={{ background: "radial-gradient(circle, #3b82f6 0%, transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute -bottom-16 -right-16 w-[400px] h-[400px] rounded-full opacity-[0.06]" style={{ background: "radial-gradient(circle, #06b6d4 0%, transparent 70%)", filter: "blur(40px)" }} />
+        <div className="absolute top-1/2 right-1/4 w-[250px] h-[250px] rounded-full opacity-[0.04]" style={{ background: "radial-gradient(circle, #6366f1 0%, transparent 70%)", filter: "blur(30px)" }} />
+      </div>
+      <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Use Cases</span>
+          <span className="text-blue-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Use Cases</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
             Built for e-commerce businesses that want to <span className="gradient-text">grow smarter</span>
           </h1>

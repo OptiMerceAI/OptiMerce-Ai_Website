@@ -7,14 +7,20 @@ import servicesHero from "@/assets/services-hero.jpg";
 
 const ServicesPage = () => (
   <Layout>
-    <section className="bg-white py-24 md:py-32 border-b border-slate-100">
-      <div className="container-tight">
+    <section className="relative overflow-hidden py-24 md:py-32" style={{ background: "linear-gradient(150deg, #07101f 0%, #0d1b33 55%, #071220 100%)" }}>
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-20 left-1/4 w-[500px] h-[400px] rounded-full opacity-[0.18]" style={{ background: "radial-gradient(ellipse, #2563eb 0%, transparent 65%)", filter: "blur(55px)" }} />
+        <div className="absolute top-0 right-0 w-[350px] h-[350px] rounded-full opacity-[0.12]" style={{ background: "radial-gradient(ellipse at top right, #0ea5e9 0%, transparent 65%)", filter: "blur(45px)" }} />
+        <div className="absolute bottom-0 left-0 w-[450px] h-[300px] opacity-[0.1]" style={{ background: "radial-gradient(ellipse at bottom left, #1d4ed8 0%, transparent 70%)", filter: "blur(50px)" }} />
+        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "radial-gradient(circle, #93c5fd 1.5px, transparent 1.5px)", backgroundSize: "50px 50px" }} />
+      </div>
+      <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Services</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+          <span className="text-sky-400 text-sm font-semibold tracking-widest uppercase mb-4 block">Services</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             AI & Data Consulting for <span className="gradient-text">E-commerce</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Beyond our platform, we offer hands-on consulting to help e-commerce businesses build data-driven capabilities from the ground up.
           </p>
         </motion.div>

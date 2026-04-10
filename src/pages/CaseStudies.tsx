@@ -39,14 +39,19 @@ const cases = [
 
 const CaseStudiesPage = () => (
   <Layout>
-    <section className="bg-white py-24 md:py-32 border-b border-slate-100">
-      <div className="container-tight">
+    <section className="relative overflow-hidden py-24 md:py-32" style={{ background: "linear-gradient(160deg, #0f172a 0%, #0c1a2e 60%, #0a1525 100%)" }}>
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(99,102,241,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.8) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute top-0 right-0 w-[600px] h-[350px] opacity-15" style={{ background: "radial-gradient(ellipse at top right, #4f46e5 0%, transparent 65%)", filter: "blur(50px)" }} />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[250px] opacity-10" style={{ background: "radial-gradient(ellipse at bottom left, #06b6d4 0%, transparent 65%)", filter: "blur(40px)" }} />
+      </div>
+      <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-500 text-sm font-semibold tracking-widest uppercase mb-4 block">Case Studies</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+          <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4 block">Case Studies</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
             Real results from <span className="gradient-text">AI-driven optimisation</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Explore how businesses have transformed their operations with OptiMerce AI.
           </p>
         </motion.div>
