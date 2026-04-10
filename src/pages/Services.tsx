@@ -1,23 +1,20 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Section, SectionHeading, FeatureCard } from "@/components/SectionComponents";
-import { Database, BarChart3, Wrench, Brain, ArrowRight } from "lucide-react";
+import { Database, ChartBar as BarChart3, Wrench, Brain, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import servicesHero from "@/assets/services-hero.jpg";
 
 const ServicesPage = () => (
   <Layout>
-    <section className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={servicesHero} alt="" className="w-full h-full object-cover opacity-100" />
-      </div>
-      <div className="container-tight relative z-10">
+    <section className="bg-slate-900 section-padding">
+      <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Services</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Services</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             AI & Data Consulting for <span className="gradient-text">E-commerce</span>
           </h1>
-          <p className="text-lg text-surface-dark-foreground leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Beyond our platform, we offer hands-on consulting to help e-commerce businesses build data-driven capabilities from the ground up.
           </p>
         </motion.div>
