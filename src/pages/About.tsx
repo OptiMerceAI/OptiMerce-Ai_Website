@@ -7,19 +7,15 @@ import aboutHero from "@/assets/about-hero.jpg";
 
 const AboutPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-24 md:py-32 bg-white">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full" style={{ background: "radial-gradient(ellipse 100% 80% at 20% 50%, rgba(219,234,254,0.5) 0%, transparent 65%)" }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[500px]" style={{ background: "radial-gradient(ellipse at top right, rgba(186,230,253,0.35) 0%, transparent 65%)" }} />
-        <div className="absolute bottom-0 left-1/3 w-[400px] h-[300px]" style={{ background: "radial-gradient(ellipse at bottom, rgba(199,210,254,0.25) 0%, transparent 70%)" }} />
-      </div>
+    <section className="relative overflow-hidden py-24 md:py-32 bg-slate-900">
+      <div className="absolute inset-0 pointer-events-none" />
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
           <span className="text-blue-500 text-sm font-semibold tracking-widest uppercase mb-4 block">About</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Empowering SMEs with <span className="gradient-text">intelligent AI</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-white leading-relaxed">
             OptiMerce AI was founded with a clear mission: make enterprise-grade AI accessible to every e-commerce business.
           </p>
         </motion.div>
