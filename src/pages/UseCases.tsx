@@ -90,34 +90,19 @@ const UseCasesPage = () => {
   return (
     <Layout>
       <section
-        className="relative w-full min-h-screen overflow-hidden flex flex-col justify-center"
-        style={{ backgroundColor: "var(--bg-deep)" }}
+        className="relative w-full min-h-screen overflow-hidden flex flex-col justify-center bg-slate-900"
       >
         <div
-          className="absolute inset-0 pointer-events-none glow-pulse"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              radial-gradient(ellipse 140% 130% at 50% 0%, rgba(30, 80, 200, 0.08) 0%, transparent 40%),
-              radial-gradient(ellipse 100% 90% at 50% 0%, rgba(50, 120, 255, 0.14) 0%, transparent 50%),
-              radial-gradient(ellipse 60% 50% at 50% 0%, rgba(80, 150, 255, 0.22) 0%, transparent 60%)
+              radial-gradient(ellipse 140% 130% at 50% 0%, rgba(30, 80, 200, 0.12) 0%, transparent 40%),
+              radial-gradient(ellipse 100% 90% at 50% 0%, rgba(50, 120, 255, 0.08) 0%, transparent 50%)
             `,
           }}
         />
 
-        <div className="absolute inset-0 pointer-events-none opacity-40">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)
-              `,
-              backgroundSize: "50px 50px",
-              backgroundPosition: "0 0",
-            }}
-          />
-        </div>
-
-        <div className="container-tight relative z-10 px-4 py-28 md:py-32 lg:py-40">
+        <div className="container-tight relative z-10 px-4 py-24 md:py-32 lg:py-40">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
@@ -127,9 +112,9 @@ const UseCasesPage = () => {
               <div
                 className="inline-block mb-6 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "var(--accent-blue)",
+                  background: "rgba(59, 130, 246, 0.1)",
+                  border: "1px solid rgba(59, 130, 246, 0.3)",
+                  color: "#60a5fa",
                 }}
               >
                 Use Cases
@@ -140,21 +125,18 @@ const UseCasesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-balance"
-              style={{ color: "var(--text-primary)" }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-balance text-white"
             >
-              Built for every team, every workflow
+              Built for e-commerce businesses that want to grow smarter
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl text-balance"
-              style={{ color: "var(--text-muted)" }}
+              className="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl text-balance text-slate-300"
             >
-              Discover how teams across the globe use our platform to streamline
-              workflows, accelerate collaboration, and drive measurable results.
+              See how OptiMerce AI addresses the unique challenges of different e-commerce segments.
             </motion.p>
 
             <motion.div
