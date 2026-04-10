@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import { Section, SectionHeading } from "@/components/SectionComponents";
 import { TrendingDown, TrendingUp, Target, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import caseStudiesHero from "@/assets/case-studies-hero.jpg";
 
 const cases = [
   {
@@ -40,17 +39,14 @@ const cases = [
 
 const CaseStudiesPage = () => (
   <Layout>
-    <section className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={caseStudiesHero} alt="" className="w-full h-full object-cover opacity-100" />
-      </div>
-      <div className="container-tight relative z-10">
+    <section className="bg-slate-900 section-padding">
+      <div className="container-tight">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Case Studies</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
+          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Case Studies</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Real results from <span className="gradient-text">AI-driven optimisation</span>
           </h1>
-          <p className="text-lg text-surface-dark-foreground leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Explore how businesses have transformed their operations with OptiMerce AI.
           </p>
         </motion.div>
