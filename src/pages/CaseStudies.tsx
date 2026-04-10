@@ -39,10 +39,18 @@ const cases = [
 
 const CaseStudiesPage = () => (
   <Layout>
-    <section className="bg-slate-900 section-padding">
-      <div className="container-tight">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/55" />
+      </div>
+      <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Case Studies</span>
+          <span className="text-white/70 text-sm font-medium tracking-wide uppercase mb-3 block">Case Studies</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             Real results from <span className="gradient-text">AI-driven optimisation</span>
           </h1>

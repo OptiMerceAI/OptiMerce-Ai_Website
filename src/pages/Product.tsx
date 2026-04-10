@@ -4,14 +4,18 @@ import { Section, SectionHeading, FeatureCard } from "@/components/SectionCompon
 import { Brain, Cpu, Lightbulb, TrendingUp, ShieldCheck, Gauge, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const ProductPage = () => (
   <Layout>
     {/* Hero */}
     <section className="section-dark section-padding relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-100" />
+        <img
+          src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/60" />
       </div>
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">

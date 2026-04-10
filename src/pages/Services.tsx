@@ -7,10 +7,18 @@ import servicesHero from "@/assets/services-hero.jpg";
 
 const ServicesPage = () => (
   <Layout>
-    <section className="bg-slate-900 section-padding">
-      <div className="container-tight">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/92 via-slate-900/80 to-slate-900/55" />
+      </div>
+      <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-400 text-sm font-medium tracking-wide uppercase mb-3 block">Services</span>
+          <span className="text-white/70 text-sm font-medium tracking-wide uppercase mb-3 block">Services</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             AI & Data Consulting for <span className="gradient-text">E-commerce</span>
           </h1>

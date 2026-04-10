@@ -30,10 +30,18 @@ const useCases = [
 
 const UseCasesPage = () => (
   <Layout>
-    <section className="relative overflow-hidden bg-slate-900 py-24 md:py-32">
+    <section className="relative overflow-hidden py-24 md:py-32">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/60" />
+      </div>
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-slate-400 text-sm font-bold tracking-widest uppercase mb-3 block">Use Cases</span>
+          <span className="text-white/70 text-sm font-bold tracking-widest uppercase mb-3 block">Use Cases</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
             Built for e-commerce businesses that want to <span className="gradient-text">grow smarter</span>
           </h1>
