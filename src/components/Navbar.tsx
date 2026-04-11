@@ -19,7 +19,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black">
       <div className="container-tight flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -71,7 +71,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-border/10 overflow-hidden"
+            className="lg:hidden bg-black border-t border-border/10 overflow-hidden"
           >
             <nav className="flex flex-col p-4 gap-1">
               {navLinks.map((l) => (
