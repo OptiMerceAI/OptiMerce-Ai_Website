@@ -22,7 +22,6 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black">
       <div className="container-tight flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/Untitled_design.png" alt="OptiMerce AI" className="h-12 w-auto brightness-110" />
           <span className="font-semibold text-lg text-hero-foreground">OptiMerce AI</span>
         </Link>
 
