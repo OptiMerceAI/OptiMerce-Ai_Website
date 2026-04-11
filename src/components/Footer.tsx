@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/Untitled_design.png" alt="OptiMerce AI" className="h-10 w-auto" />
+            <img src="/Untitled_design.png" alt="OptiMerce AI" className="h-14 w-auto brightness-110" />
             <span className="font-semibold text-lg text-hero-foreground">OptiMerce AI</span>
           </div>
           <p className="text-sm text-surface-dark-foreground leading-relaxed">
