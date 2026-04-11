@@ -126,7 +126,7 @@
     border-color: hsl(var(--primary) / 0.3);
   }
   .section-padding {
-    @apply py-20 md:py-28 px-4;
+    @apply py-16 md:py-20 px-4;
   }
   .container-tight {
     @apply max-w-6xl mx-auto;

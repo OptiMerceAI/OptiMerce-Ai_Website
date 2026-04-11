@@ -16,7 +16,7 @@ const Hero = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/75 to-slate-900/55" />
     </div>
-    <div className="container-tight px-4 py-24 md:py-36 relative z-10">
+    <div className="container-tight px-4 py-20 md:py-28 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const Solution = () => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="mt-16 rounded-xl overflow-hidden border border-border shadow-2xl"
+      className="mt-12 rounded-xl overflow-hidden border border-border shadow-2xl"
     >
       <img src={dashboardMockup} alt="OptiMerce AI Platform Dashboard" className="w-full h-auto" />
     </motion.div>
@@ -115,7 +115,7 @@ const HowItWorks = () => (
     </div>
     <div className="relative z-10">
       <SectionHeading eyebrow="How It Works" title="From data to decisions in three steps" light />
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-6">
         {[
           { step: "01", title: "Connect Your Data", desc: "Integrate with Shopify, Amazon, Google Ads, and more. Our connectors ingest your sales, inventory, and advertising data automatically." },
           { step: "02", title: "AI Analyses & Optimises", desc: "Our forecasting and optimisation engines process your data, identifying patterns and generating actionable recommendations." },

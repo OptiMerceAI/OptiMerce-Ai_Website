@@ -39,7 +39,7 @@ const cases = [
 
 const CaseStudiesPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-24 md:py-32" style={{ background: "linear-gradient(160deg, #0f172a 0%, #0c1a2e 60%, #0a1525 100%)" }}>
+    <section className="relative overflow-hidden py-20 md:py-28" style={{ background: "linear-gradient(160deg, #0f172a 0%, #0c1a2e 60%, #0a1525 100%)" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(99,102,241,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.8) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="absolute top-0 right-0 w-[600px] h-[350px] opacity-15" style={{ background: "radial-gradient(ellipse at top right, #4f46e5 0%, transparent 65%)", filter: "blur(50px)" }} />
@@ -68,7 +68,7 @@ const CaseStudiesPage = () => (
               <p className={`text-sm ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.client}</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-6">
             <div className="flex flex-col items-center justify-center rounded-xl bg-primary/5 border border-primary/10 p-6">
               <span className="text-4xl font-bold gradient-text">{c.metric}</span>
               <span className={`text-sm mt-1 ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.metricLabel}</span>

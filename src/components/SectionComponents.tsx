@@ -29,7 +29,7 @@ export const SectionHeading = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="max-w-2xl mb-12 md:mb-16"
+    className="max-w-2xl mb-8 md:mb-12"
   >
     {eyebrow && (
       <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">

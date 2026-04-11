@@ -7,7 +7,7 @@ import aboutHero from "@/assets/about-hero.jpg";
 
 const AboutPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-24 md:py-32 bg-slate-900">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-slate-900">
       <div className="absolute inset-0 pointer-events-none" />
       <div className="container-tight relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
@@ -23,7 +23,7 @@ const AboutPage = () => (
     </section>
 
     <Section>
-      <div className="grid md:grid-cols-2 gap-12 items-start">
+      <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <SectionHeading eyebrow="Our Story" title="From frustration to innovation" />
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -33,7 +33,7 @@ const AboutPage = () => (
           </div>
         </div>
         <div className="space-y-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-xl overflow-hidden border border-border mb-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-xl overflow-hidden border border-border mb-4">
             <img src={aboutHero} alt="London cityscape — OptiMerce AI headquarters" className="w-full h-48 object-cover" />
           </motion.div>
           {[

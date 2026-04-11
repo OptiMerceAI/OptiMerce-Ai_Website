@@ -40,7 +40,7 @@ const useCases = [
 
 const UseCasesPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-24 md:py-32" style={{ background: "linear-gradient(150deg, #07101f 0%, #0d1b33 55%, #071220 100%)" }}>
+    <section className="relative overflow-hidden py-20 md:py-28" style={{ background: "linear-gradient(150deg, #07101f 0%, #0d1b33 55%, #071220 100%)" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-20 left-1/4 w-[500px] h-[400px] rounded-full opacity-[0.18]" style={{ background: "radial-gradient(ellipse, #2563eb 0%, transparent 65%)", filter: "blur(55px)" }} />
         <div className="absolute top-0 right-0 w-[350px] h-[350px] rounded-full opacity-[0.12]" style={{ background: "radial-gradient(ellipse at top right, #0ea5e9 0%, transparent 65%)", filter: "blur(45px)" }} />
@@ -70,7 +70,7 @@ const UseCasesPage = () => (
     </Section>
 
     <Section className="section-dark">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-10 items-center">
         <div>
           <SectionHeading eyebrow="How It Works" title="Proven methodology for growth" light />
           <div className="space-y-6">

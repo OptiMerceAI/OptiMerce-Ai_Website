@@ -79,7 +79,7 @@ const ArchitecturePage = () => (
     {/* Hero — Architecture Diagram */}
     <section className="bg-hero section-padding relative">
       <div className="container-tight">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mb-10">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl mb-8">
           <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">Architecture</span>
           <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground leading-tight mb-6">
             Five-Layer Technical Architecture

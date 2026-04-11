@@ -26,7 +26,7 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <section className="bg-slate-900 py-24 md:py-32">
+      <section className="bg-slate-900 py-20 md:py-28">
         <div className="container-tight">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
             <span className="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-4 block">Contact</span>
@@ -41,7 +41,7 @@ const ContactPage = () => {
       </section>
 
       <Section>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-10">
           <div className="md:col-span-2">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
