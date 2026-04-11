@@ -45,7 +45,8 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact"
-            className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+            className="px-4 py-2 text-sm font-medium rounded-lg text-white hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#800080" }}
           >
             Request Early Access
           </Link>
@@ -88,7 +89,8 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground text-center"
+                className="mt-2 px-4 py-2 text-sm font-medium rounded-lg text-white text-center"
+                style={{ backgroundColor: "#800080" }}
               >
                 Request Early Access
               </Link>
