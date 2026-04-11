@@ -23,14 +23,14 @@ const Hero = () => (
         transition={{ duration: 0.7 }}
         className="max-w-3xl"
       >
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-white/10 text-white border border-white/25 mb-6 backdrop-blur-sm drop-shadow-md">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide bg-white/10 text-white border border-white/25 mb-6 backdrop-blur-sm drop-shadow-md">
           <Zap size={12} /> Pilot Program Now Open
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-md">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6 drop-shadow-md tracking-tight">
           AI-Powered Optimisation for{" "}
           <span className="gradient-text">E-commerce Growth</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-200 leading-relaxed mb-8 max-w-2xl drop-shadow-md">
+        <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl drop-shadow-md font-light">
           Unify demand forecasting, pricing optimisation, inventory intelligence, and ad spend management with a single AI-driven decision engine.
         </p>
         <div className="flex flex-wrap gap-4">
