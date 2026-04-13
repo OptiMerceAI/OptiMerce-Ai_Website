@@ -19,11 +19,11 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
       <div className="container-tight flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-3">
           <img src="/8198cc75-e9d8-4ec1-ad82-dd129dadbeb3_removalai_preview.png" alt="OptiMerce AI Logo" className="h-12 w-auto" />
-          <span className="font-semibold text-lg text-hero-foreground">OptiMerce AI</span>
+          <span className="font-semibold text-lg text-gray-900">OptiMerce AI</span>
         </Link>
 
         {/* Desktop */}
@@ -35,7 +35,7 @@ const Navbar = () => {
               className={`px-3 py-2 text-sm rounded-md transition-colors ${
                 location.pathname === l.href
                   ? "text-primary"
-                  : "text-surface-dark-foreground hover:text-hero-foreground"
+                  : "text-gray-700 hover:text-gray-900"
               }`}
             >
               {l.label}
@@ -56,7 +56,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden text-hero-foreground"
+          className="lg:hidden text-gray-900"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +70,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black border-t border-border/10 overflow-hidden"
+            className="lg:hidden bg-white border-t border-gray-200 overflow-hidden"
           >
             <nav className="flex flex-col p-4 gap-1">
               {navLinks.map((l) => (
@@ -81,7 +81,7 @@ const Navbar = () => {
                   className={`px-3 py-2 text-sm rounded-md transition-colors ${
                     location.pathname === l.href
                       ? "text-primary"
-                      : "text-surface-dark-foreground hover:text-hero-foreground"
+                      : "text-gray-700 hover:text-gray-900"
                   }`}
                 >
                   {l.label}

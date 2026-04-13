@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="bg-black border-t border-border/10">
+  <footer className="bg-white border-t border-gray-200">
     <div className="container-tight px-4 py-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-3 mb-4">
             <img src="/8198cc75-e9d8-4ec1-ad82-dd129dadbeb3_removalai_preview.png" alt="OptiMerce AI Logo" className="h-10 w-auto" />
-            <span className="font-semibold text-lg text-hero-foreground">OptiMerce AI</span>
+            <span className="font-semibold text-lg text-gray-900">OptiMerce AI</span>
           </div>
-          <p className="text-sm text-surface-dark-foreground leading-relaxed">
+          <p className="text-sm text-gray-700 leading-relaxed">
             AI-powered decision engine for e-commerce growth. Built in the UK.
           </p>
         </div>
         <div>
-          <h4 className="text-hero-foreground font-medium text-sm mb-3">Platform</h4>
-          <ul className="space-y-2 text-sm text-surface-dark-foreground">
+          <h4 className="text-gray-900 font-medium text-sm mb-3">Platform</h4>
+          <ul className="space-y-2 text-sm text-gray-700">
             <li><Link to="/product" className="hover:text-primary transition-colors">Product</Link></li>
             <li><Link to="/architecture" className="hover:text-primary transition-colors">Architecture</Link></li>
             <li><Link to="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link></li>
@@ -23,8 +23,8 @@ const Footer = () => (
           </ul>
         </div>
         <div>
-          <h4 className="text-hero-foreground font-medium text-sm mb-3">Company</h4>
-          <ul className="space-y-2 text-sm text-surface-dark-foreground">
+          <h4 className="text-gray-900 font-medium text-sm mb-3">Company</h4>
+          <ul className="space-y-2 text-sm text-gray-700">
             <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
             <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
             <li><Link to="/case-studies" className="hover:text-primary transition-colors">Case Studies</Link></li>
@@ -32,21 +32,21 @@ const Footer = () => (
           </ul>
         </div>
         <div>
-          <h4 className="text-hero-foreground font-medium text-sm mb-3">Legal</h4>
-          <ul className="space-y-2 text-sm text-surface-dark-foreground">
+          <h4 className="text-gray-900 font-medium text-sm mb-3">Legal</h4>
+          <ul className="space-y-2 text-sm text-gray-700">
             <li><span className="cursor-default">Privacy Policy</span></li>
             <li><span className="cursor-default">Terms of Service</span></li>
           </ul>
         </div>
       </div>
-      <div className="mt-8 pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-surface-dark-foreground">© 2026 OptiMerce AI. All rights reserved. A Jwalit Ltd company.</p>
+      <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-xs text-gray-700">© 2026 OptiMerce AI. All rights reserved. A Jwalit Ltd company.</p>
         <div className="flex items-center gap-4">
           <a
             href="https://www.facebook.com/profile.php?id=61587820710838"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-surface-dark-foreground hover:text-primary transition-colors"
+            className="text-gray-700 hover:text-primary transition-colors"
             aria-label="Facebook"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -57,7 +57,7 @@ const Footer = () => (
             href="https://www.instagram.com/optimerce_ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-surface-dark-foreground hover:text-primary transition-colors"
+            className="text-gray-700 hover:text-primary transition-colors"
             aria-label="Instagram"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -68,7 +68,7 @@ const Footer = () => (
             href="https://www.linkedin.com/company/111898237/admin/dashboard/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-surface-dark-foreground hover:text-primary transition-colors"
+            className="text-gray-700 hover:text-primary transition-colors"
             aria-label="LinkedIn"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -79,7 +79,7 @@ const Footer = () => (
             href="https://github.com/settings/repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-surface-dark-foreground hover:text-primary transition-colors"
+            className="text-gray-700 hover:text-primary transition-colors"
             aria-label="GitHub"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
