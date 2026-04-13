@@ -46,8 +46,12 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact"
-            className="px-4 py-2 text-sm font-medium rounded-lg text-white hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#800080" }}
+            className="px-4 py-2 text-sm font-medium rounded-lg text-white transition-colors"
+            style={{
+              backgroundColor: "#2563eb",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1d4ed8"}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2563eb"}
           >
             Request Early Access
           </Link>
@@ -90,8 +94,12 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-4 py-2 text-sm font-medium rounded-lg text-white text-center"
-                style={{ backgroundColor: "#800080" }}
+                className="mt-2 px-4 py-2 text-sm font-medium rounded-lg text-white text-center transition-colors"
+                style={{
+                  backgroundColor: "#2563eb",
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1d4ed8"}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2563eb"}
               >
                 Request Early Access
               </Link>
