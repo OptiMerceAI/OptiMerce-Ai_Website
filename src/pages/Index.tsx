@@ -36,8 +36,10 @@ const Hero = () => (
         <div className="flex flex-wrap gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-medium hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: "#800080" }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+            style={{ backgroundColor: "#2563eb" }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1d4ed8"}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2563eb"}
           >
             Request Early Access <ArrowRight size={16} />
           </Link>
@@ -160,7 +162,13 @@ const CTASection = () => (
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <h2 className="text-3xl md:text-4xl font-bold text-hero-foreground mb-4">Ready to optimise your e-commerce operations?</h2>
         <p className="text-surface-dark-foreground mb-8">Join our pilot program and get early access to the OptiMerce AI decision engine.</p>
-        <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-medium text-lg hover:opacity-90 transition-opacity" style={{ backgroundColor: "#800080" }}>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-medium text-lg transition-colors"
+          style={{ backgroundColor: "#2563eb" }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1d4ed8"}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2563eb"}
+        >
           Request Early Access <ArrowRight size={18} />
         </Link>
       </motion.div>
