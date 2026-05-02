@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer className="bg-white border-t border-gray-200">
-    <div className="container-tight px-4 py-16">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div className="col-span-2 md:col-span-1">
-          <div className="flex items-center gap-3 mb-4">
-            <img src="/8198cc75-e9d8-4ec1-ad82-dd129dadbeb3_removalai_preview.png" alt="OptiMerce AI Logo" className="h-10 w-auto" />
-            <span className="font-semibold text-lg text-gray-900">OptiMerce AI</span>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
+        <div className="col-span-2 sm:col-span-1">
+          <div className="flex items-center gap-2 sm:gap-3 mb-6">
+            <img src="/8198cc75-e9d8-4ec1-ad82-dd129dadbeb3_removalai_preview.png" alt="OptiMerce AI Logo" className="h-9 sm:h-10 w-auto" />
+            <span className="font-semibold text-sm sm:text-base text-gray-900">OptiMerce AI</span>
           </div>
-          <p className="text-sm text-gray-700 leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
             AI-powered decision engine for e-commerce growth. Built in the UK.
           </p>
         </div>
         <div>
-          <h4 className="text-gray-900 font-medium text-sm mb-3">Platform</h4>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h4 className="text-gray-900 font-semibold text-xs sm:text-sm mb-6">Platform</h4>
+          <ul className="space-y-3 text-xs sm:text-sm text-gray-600">
             <li><Link to="/product" className="hover:text-primary transition-colors">Product</Link></li>
             <li><Link to="/architecture" className="hover:text-primary transition-colors">Architecture</Link></li>
             <li><Link to="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link></li>
@@ -23,8 +23,8 @@ const Footer = () => (
           </ul>
         </div>
         <div>
-          <h4 className="text-gray-900 font-medium text-sm mb-3">Company</h4>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h4 className="text-gray-900 font-semibold text-xs sm:text-sm mb-6">Company</h4>
+          <ul className="space-y-3 text-xs sm:text-sm text-gray-600">
             <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
             <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
             <li><Link to="/case-studies" className="hover:text-primary transition-colors">Case Studies</Link></li>
@@ -32,16 +32,16 @@ const Footer = () => (
           </ul>
         </div>
         <div>
-          <h4 className="text-gray-900 font-medium text-sm mb-3">Legal</h4>
-          <ul className="space-y-2 text-sm text-gray-700">
-            <li><span className="cursor-default">Privacy Policy</span></li>
-            <li><span className="cursor-default">Terms of Service</span></li>
+          <h4 className="text-gray-900 font-semibold text-xs sm:text-sm mb-6">Legal</h4>
+          <ul className="space-y-3 text-xs sm:text-sm text-gray-600">
+            <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link></li>
           </ul>
         </div>
       </div>
-      <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-gray-700">© 2026 OptiMerce AI. All rights reserved. A Jwalit Ltd company.</p>
-        <div className="flex items-center gap-4">
+      <div className="mt-12 pt-12 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
+        <p className="text-xs text-gray-600">© 2026 OptiMerce AI. All rights reserved. A Jwalit Ltd company.</p>
+        <div className="flex items-center justify-center gap-4">
           <a
             href="https://www.facebook.com/profile.php?id=61587820710838"
             target="_blank"

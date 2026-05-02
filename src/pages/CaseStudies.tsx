@@ -39,19 +39,19 @@ const cases = [
 
 const CaseStudiesPage = () => (
   <Layout>
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ background: "linear-gradient(160deg, #0f172a 0%, #0c1a2e 60%, #0a1525 100%)" }}>
+    <section className="relative overflow-hidden py-20 sm:py-28 md:py-36" style={{ background: "linear-gradient(160deg, #0f172a 0%, #0c1a2e 60%, #0a1525 100%)" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(99,102,241,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.8) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[350px] opacity-15" style={{ background: "radial-gradient(ellipse at top right, #4f46e5 0%, transparent 65%)", filter: "blur(50px)" }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[250px] opacity-10" style={{ background: "radial-gradient(ellipse at bottom left, #06b6d4 0%, transparent 65%)", filter: "blur(40px)" }} />
+        <div className="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[250px] sm:h-[350px] opacity-15" style={{ background: "radial-gradient(ellipse at top right, #4f46e5 0%, transparent 65%)", filter: "blur(50px)" }} />
+        <div className="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[150px] sm:h-[250px] opacity-10" style={{ background: "radial-gradient(ellipse at bottom left, #06b6d4 0%, transparent 65%)", filter: "blur(40px)" }} />
       </div>
-      <div className="container-tight relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
-          <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4 block">Case Studies</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
+          <span className="text-cyan-400 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3 sm:mb-4 block">Case Studies</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight mb-4 sm:mb-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
             Real results from <span className="gradient-text">AI-driven optimisation</span>
           </h1>
-          <p className="text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             Explore how businesses have transformed their operations with OptiMerce AI.
           </p>
         </motion.div>
@@ -61,29 +61,29 @@ const CaseStudiesPage = () => (
     {cases.map((c, i) => (
       <Section key={i} className={i % 2 === 0 ? "" : "section-dark"}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <div className="flex items-start gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">{c.icon}</div>
+          <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">{c.icon}</div>
             <div>
-              <h2 className={`text-2xl md:text-3xl font-bold mb-1 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>{c.title}</h2>
-              <p className={`text-sm ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.client}</p>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-semibold mb-1 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>{c.title}</h2>
+              <p className={`text-xs sm:text-sm ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.client}</p>
             </div>
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="flex flex-col items-center justify-center rounded-xl bg-primary/5 border border-primary/10 p-6">
-              <span className="text-4xl font-bold gradient-text">{c.metric}</span>
-              <span className={`text-sm mt-1 ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.metricLabel}</span>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="flex flex-col items-center justify-center rounded-lg sm:rounded-xl bg-primary/5 border border-primary/10 p-5 sm:p-6">
+              <span className="text-3xl sm:text-4xl font-bold gradient-text">{c.metric}</span>
+              <span className={`text-xs sm:text-sm mt-1 text-center ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.metricLabel}</span>
             </div>
             <div>
-              <h4 className={`font-semibold text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Problem</h4>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.problem}</p>
+              <h4 className={`font-semibold text-xs sm:text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Problem</h4>
+              <p className={`text-xs sm:text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.problem}</p>
             </div>
             <div>
-              <h4 className={`font-semibold text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Approach</h4>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.approach}</p>
+              <h4 className={`font-semibold text-xs sm:text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Approach</h4>
+              <p className={`text-xs sm:text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.approach}</p>
             </div>
             <div>
-              <h4 className={`font-semibold text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Result</h4>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.result}</p>
+              <h4 className={`font-semibold text-xs sm:text-sm mb-2 ${i % 2 === 0 ? "text-foreground" : "text-hero-foreground"}`}>Result</h4>
+              <p className={`text-xs sm:text-sm leading-relaxed ${i % 2 === 0 ? "text-muted-foreground" : "text-surface-dark-foreground"}`}>{c.result}</p>
             </div>
           </div>
         </motion.div>
@@ -91,10 +91,10 @@ const CaseStudiesPage = () => (
     ))}
 
     <Section className="section-dark">
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-hero-foreground mb-4">Want results like these?</h2>
-        <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
-          Join the Pilot Program <ArrowRight size={18} />
+      <div className="text-center max-w-2xl mx-auto px-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-hero-foreground mb-3 sm:mb-4">Want results like these?</h2>
+        <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity tap-highlight-transparent w-full sm:w-auto">
+          Join the Pilot Program <ArrowRight size={18} className="hidden sm:block" />
         </Link>
       </div>
     </Section>

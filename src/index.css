@@ -2,24 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 18%;
 
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 18%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
@@ -86,8 +84,34 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+  h1 {
+    @apply text-6xl font-semibold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    @apply text-5xl font-semibold tracking-tight;
+    letter-spacing: -0.016em;
+  }
+  h3 {
+    @apply text-4xl font-semibold tracking-tight;
+    letter-spacing: -0.012em;
+  }
+  h4 {
+    @apply text-3xl font-semibold tracking-tight;
+    letter-spacing: -0.008em;
+  }
+  h5 {
+    @apply text-2xl font-semibold;
+    letter-spacing: -0.004em;
+  }
+  h6 {
+    @apply text-xl font-semibold;
+  }
+  p {
+    @apply text-base font-normal;
+  }
+  small {
+    @apply text-sm font-normal;
   }
 }
 
@@ -126,16 +150,35 @@
     border-color: hsl(var(--primary) / 0.3);
   }
   .section-padding {
-    @apply py-16 md:py-20 px-4;
+    @apply pt-0 pb-20 md:pb-28 px-4 sm:px-6;
+  }
+  .section-spacing {
+    @apply py-16 sm:py-24 md:py-32;
+  }
+  .section-spacing-lg {
+    @apply py-20 sm:py-28 md:py-36;
   }
   .container-tight {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
+  }
+  .container-ultra-tight {
+    @apply max-w-7xl mx-auto px-4 sm:px-6;
+  }
+  .text-subdued {
+    color: hsl(0 0% 45%);
+  }
+  .text-subtle {
+    color: hsl(0 0% 60%);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
   }
 
   @keyframes glow-pulse {
@@ -159,5 +202,11 @@
       rgba(50, 120, 255, 0.14) 35%,
       rgba(80, 150, 255, 0.22) 70%,
       transparent 100%);
+  }
+
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px;
+    }
   }
 }

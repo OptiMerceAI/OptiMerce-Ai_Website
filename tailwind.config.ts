@@ -14,8 +14,28 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "-apple-system", "system-ui", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
+      },
+      fontSize: {
+        xs: ["12px", { lineHeight: "1.5", letterSpacing: "0px" }],
+        sm: ["14px", { lineHeight: "1.57", letterSpacing: "0px" }],
+        base: ["16px", { lineHeight: "1.625", letterSpacing: "0px" }],
+        lg: ["18px", { lineHeight: "1.67", letterSpacing: "0px" }],
+        xl: ["20px", { lineHeight: "1.7", letterSpacing: "-0.32px" }],
+        "2xl": ["24px", { lineHeight: "1.66", letterSpacing: "-0.38px" }],
+        "3xl": ["30px", { lineHeight: "1.6", letterSpacing: "-0.5px" }],
+        "4xl": ["36px", { lineHeight: "1.555", letterSpacing: "-0.6px" }],
+        "5xl": ["44px", { lineHeight: "1.5", letterSpacing: "-0.7px" }],
+        "6xl": ["52px", { lineHeight: "1.46", letterSpacing: "-0.8px" }],
+      },
+      fontWeight: {
+        thin: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
       },
       colors: {
         border: "hsl(var(--border))",
