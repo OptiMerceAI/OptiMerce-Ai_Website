@@ -29,15 +29,15 @@ export const SectionHeading = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="max-w-3xl mb-12 sm:mb-14 md:mb-16"
+    className="max-w-2xl mb-8 md:mb-12"
   >
     {eyebrow && (
-      <span className="text-primary text-xs sm:text-sm font-medium tracking-wide uppercase mb-3 sm:mb-4 block">
+      <span className="text-primary text-sm font-medium tracking-wide uppercase mb-3 block">
         {eyebrow}
       </span>
     )}
     <h2
-      className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-4 sm:mb-5 md:mb-6 ${
+      className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 ${
         light ? "text-hero-foreground" : "text-foreground"
       }`}
     >
@@ -45,7 +45,7 @@ export const SectionHeading = ({
     </h2>
     {description && (
       <p
-        className={`text-sm sm:text-base md:text-lg leading-relaxed ${
+        className={`text-lg leading-relaxed ${
           light ? "text-surface-dark-foreground" : "text-muted-foreground"
         }`}
       >
@@ -71,24 +71,24 @@ export const FeatureCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4 }}
-    className={`group rounded-lg sm:rounded-xl border p-6 sm:p-8 transition-all duration-300 hover:border-primary/30 ${
+    className={`group rounded-xl border p-6 transition-all duration-300 hover:border-primary/30 ${
       dark
         ? "bg-surface-dark-elevated border-border/10 hover:glow-sm"
         : "bg-card border-border hover:shadow-lg"
     }`}
   >
-    <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 sm:mb-6 group-hover:bg-primary/20 transition-colors flex-shrink-0">
+    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary/20 transition-colors">
       {icon}
     </div>
     <h3
-      className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${
+      className={`text-lg font-semibold mb-2 ${
         dark ? "text-hero-foreground" : "text-foreground"
       }`}
     >
       {title}
     </h3>
     <p
-      className={`text-sm sm:text-base leading-relaxed ${
+      className={`text-sm leading-relaxed ${
         dark ? "text-surface-dark-foreground" : "text-muted-foreground"
       }`}
     >

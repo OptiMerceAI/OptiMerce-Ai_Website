@@ -150,19 +150,10 @@
     border-color: hsl(var(--primary) / 0.3);
   }
   .section-padding {
-    @apply pt-0 pb-20 md:pb-28 px-4 sm:px-6;
-  }
-  .section-spacing {
-    @apply py-16 sm:py-24 md:py-32;
-  }
-  .section-spacing-lg {
-    @apply py-20 sm:py-28 md:py-36;
+    @apply py-20 md:py-28 px-4;
   }
   .container-tight {
-    @apply max-w-6xl mx-auto px-4 sm:px-6;
-  }
-  .container-ultra-tight {
-    @apply max-w-7xl mx-auto px-4 sm:px-6;
+    @apply max-w-6xl mx-auto;
   }
   .text-subdued {
     color: hsl(0 0% 45%);
@@ -175,10 +166,6 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-
-  .tap-highlight-transparent {
-    -webkit-tap-highlight-color: transparent;
   }
 
   @keyframes glow-pulse {
@@ -202,11 +189,5 @@
       rgba(50, 120, 255, 0.14) 35%,
       rgba(80, 150, 255, 0.22) 70%,
       transparent 100%);
-  }
-
-  @media (max-width: 640px) {
-    body {
-      font-size: 16px;
-    }
   }
 }
