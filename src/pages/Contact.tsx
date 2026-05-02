@@ -1,42 +1,10 @@
-import { useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import { Section } from "@/components/SectionComponents";
 import { Send, Mail, MapPin } from "lucide-react";
-import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
 
 const ContactPage = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const WEB3FORMS_ACCESS_KEY = "14cc46a5-1a8f-44ad-8fd0-efa1c5c9dae9";
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    if (!formData.get("name")?.toString().trim() || !formData.get("email")?.toString().trim() || !formData.get("message")?.toString().trim()) {
-      toast.error("Please fill in all required fields.");
-      return;
-    }
-
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          toast.success("Thank you! We'll be in touch shortly.");
-          form.reset();
-        } else {
-          toast.error("Failed to send message. Please try again.");
-        }
-      })
-      .catch(() => {
-        toast.error("Failed to send message. Please try again.");
-      });
-  };
 
   return (
     <Layout>
@@ -57,8 +25,8 @@ const ContactPage = () => {
       <Section>
         <div className="grid md:grid-cols-3 gap-10">
           <div className="md:col-span-2">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+              <input type="hidden" name="access_key" value="61e609a4-7aa3-481b-b46d-b0fc891c718a" />
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Name *</label>
